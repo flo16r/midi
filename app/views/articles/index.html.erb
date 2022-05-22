@@ -1,33 +1,29 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
 <p id="notice"><%= notice %></p>
 
-<h1>ClassMyMIDI</h1>
+
 
 <table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Text</th>
-      <th>Style</th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+
+    <div class="contenant">
+      <img src="https://img.lemde.fr/2019/10/04/0/0/6000/4000/1045/696/75/0/3d75355_Q2rKTBZVEL3KKjKQRElFMCro.jpg" id="background" alt="image">
+      <div class="maintext">ClassMyMIDI</div>
+    </div>
 
   <tbody>
     <% @articles.each do |article| %>
       <tr>
-        <td><%= article.name %></td>
-        <td><%= article.text %></td>
         <td><%= article.style %></td>
         <td><%= article.image %></td>
-        <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%= link_to article.name, "https://www.thomann.de/fr/compare.html?art%5B%5D=402764&art%5B%5D=400073&art%5B%5D=498231", :target => "_blank" %>
+        <td><%= article.text %></td>
+
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Article', new_article_path %>
